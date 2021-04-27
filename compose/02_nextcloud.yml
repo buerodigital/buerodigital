@@ -1,0 +1,49 @@
+version: "3.7"
+
+services:
+  nextcloud:
+    container_name: nextcloud
+    image: linuxserver/nextcloud:21.0.0-ls130
+    environment:
+      - PUID=1000
+      - PGID=998
+      - TZ=Europe/Berlin
+    volumes:
+      - data_02_nextcloud:/data
+      - conf_02_nextcloud:/config
+    restart: unless-stopped
+    networks:
+      - proxy
+    depends_on:
+      - mariadb-nextcloud
+
+  mariadb-nextcloud:
+    image: linuxserver/mariadb:amd64-alpine-version-10.5.9-r0
+    container_name: mariadb-nextcloud
+    restart: unless-stopped
+    volumes:
+      - data_02_nextcloud_db:/config
+    environment:
+      - PUID=1000
+      - PGID=998
+      - MYSQL_ROOT_PASSWORD=secretphrase
+      - MYSQL_PASSWORD=nextpass
+      - MYSQL_DATABASE=nextdb
+      - MYSQL_USER=nextuser
+      - TZ=Europe/Berlin
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
+
+volumes:
+  data_02_nextcloud:
+    external: true
+  conf_02_nextcloud:
+    external: true
+  data_02_nextcloud_db:
+    external: true
+
+
