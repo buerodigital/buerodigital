@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+
+  bitwarden:
+    image: bitwardenrs/server:1.20.0-alpine
+    container_name: bitwarden
+    environment:
+      - DOMAIN=https://nas.massow/bitwarden/
+      - WEBSOCKET_ENABLED=true
+    restart: unless-stopped
+    volumes:
+        - conf_04_bitwarden:/data
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
+
+volumes:
+  conf_04_bitwarden:
+    external: true
+
