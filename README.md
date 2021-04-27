@@ -1,7 +1,7 @@
 # nas
 Config files for my GitHub profile.
 
-#Proxy
+# Proxy
 
 nginx
 Heimdall
@@ -13,7 +13,7 @@ Organizr testen
 SWAG für ext
 SSO mit Authelia
 
-#Medienstreaming
+# Medienstreaming
 
 mariadb
 Jellyfin
@@ -23,7 +23,7 @@ TVHeadend
 
 DB für Kodi
 
-#Samba
+# Samba
 
 Samba
 rdiffweb
@@ -33,7 +33,7 @@ rdiffweb
 
 inkl Backup
 
-#Nextcloud
+# Nextcloud
 
 Nextcloud
 ELK Stack
@@ -45,7 +45,7 @@ Als DMS
 Photoverwaltung
 
 
-#Webdienste
+# Webdienste
 
 Dokuwiki
 mariadb
@@ -72,7 +72,7 @@ Wordpress
 Guacamole!?
 
 
-#Medienverwaltung
+# Medienverwaltung
 
 Filebot
 Beets / Picard ??
@@ -84,13 +84,13 @@ Audio / Video
 testen! (erstmal beide?)
 
 
-#ebooks
+# ebooks
 
 Calibre
 Calibre-Web
 
 
-#Mediendownload
+# Mediendownload
 
 YouTubeDL
 
@@ -102,7 +102,7 @@ Usenext
 Youtube
 
 
-#email!!!
+# email!!!
 
 mailcow??
 
