@@ -1,0 +1,45 @@
+version: "3.7"
+
+services:
+
+  calibre:
+    image: linuxserver/calibre:v5.14.0-ls106
+    container_name: calibre
+    environment:
+      - PUID=1000
+      - PGID=998
+      - TZ=Europe/Berlin
+    volumes:
+      - data_03_calibre:/config
+    restart: unless-stopped
+    networks:
+      - proxy
+
+  calibre-web:
+    image: linuxserver/calibre-web:0.6.11-ls113
+    container_name: calibre-web
+    environment:
+      - PUID=1000
+      - PGID=998
+      - TZ=Europe/Berlin
+      - DOCKER_MODS=linuxserver/calibre-web:calibre
+    volumes:
+      - conf_03_calibre_web:/config
+      - data_03_calibre:/books
+    restart: unless-stopped
+    networks:
+      - proxy
+    depends_on:
+      - calibre
+
+networks:
+  proxy:
+    external: true
+
+volumes:
+  conf_03_calibre_web:
+    external: true
+  data_03_calibre:
+    external: true
+
+
