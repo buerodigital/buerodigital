@@ -1,0 +1,42 @@
+version: "3.7"
+
+services:
+
+  emby:
+    image: linuxserver/emby:4.5.4.0-ls79
+    container_name: emby
+    environment:
+      - PUID=1000
+      - PGID=1998
+      - TZ=Europe/Berlin
+    volumes:
+      - conf_05_emby:/config
+      - data_05_emby_tvshows:/data/tvshows
+      - data_05_emby_movies:/data/movies
+#    ports:
+#      - 8096:8096
+#      - 8920:8920 #optional
+#    devices:
+#      - /dev/dri:/dev/dri #optional
+#      - /dev/vchiq:/dev/vchiq #optional
+#      - /dev/video10:/dev/video10 #optional
+#      - /dev/video11:/dev/video11 #optional
+#      - /dev/video12:/dev/video12 #optional
+    restart: unless-stopped
+    networks:
+      - proxy
+
+
+networks:
+  proxy:
+    external: true
+
+volumes:
+  conf_05_emby:
+    external: true
+  data_05_emby_tvshows:
+    external: true
+  data_05_emby_movies:
+    external: true
+
+
