@@ -1,9 +1,6 @@
 #!/bin/bash
 
-function about(){
-  #cat https://github.com/buerodigital/nas/edit/main/install/_template.sh
-    echo "About"
-}
+APP="01_proxy"
 
 function install(){
     echo "Install"
@@ -19,6 +16,10 @@ function stop(){
 
 function remove(){
     echo "Remove"
+}
+
+function about(){
+  #cat "https://github.com/buerodigital/nas/blob/main/_info/"$APP".md"
 }
 
 function help(){
