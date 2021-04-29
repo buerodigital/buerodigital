@@ -1,39 +1,54 @@
 #!/bin/bash
 
-# -i --install
-# -s --start --restart
-# -h --stop --halt
-# -r --remove --delete
-# -p --purge
-# -a --about
+function help(){
+  echo "Die Funktion bitte mit einem der folgenden Parameter aufrufen:"
+  echo -e " -a --about\t\t Gibt Informationen über die Anwendung aus"     
+  echo -e " -i --install\t\t Installiert die Anwendung"
+  echo -e " -s --start --restart\t\t Startet die Anwendung"   
+  echo -e " -h --stop --halt\t\t Beendet die Anwendung"   
+  echo -e " -r --remove --delete\t\t Deinstalliert die Anwendung (Volumes bleiben erhalten!)"   
+}
+
+function about(){
+    echo "Hilfe"
+}
+
+function install(){
+    echo "Hilfe"
+}
+
+function start(){
+    echo "Hilfe"
+}
+
+function stop(){
+    echo "Hilfe"
+}
+
+function remove(){
+    echo "Hilfe"
+}
+
 
 case $1 in
-
   "-i" | "--install" )
-    echo "Lithuanian" 
+    install 
     ;;
-
   "-s" | "--start" | "--restart" )
-    echo "Romanian" 
+    start 
     ;;
-
   "-h" | "--stop" | "--halt" )
-    echo "Italian"
+    stop
     ;;
-
   "-r" | "--remove" | "--delete")
-    echo "Italian"
-    echo "Samba haendisch loeschen!!!!!"
+    remove
     ;;
-
   "-a" | "--about" )
-    echo "Italian"
+    about
     ;;
-
   *)
-    echo "unknown"
+    help
     ;;
-
 esac
 
 exit 0
