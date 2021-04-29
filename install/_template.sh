@@ -1,5 +1,26 @@
 #!/bin/bash
 
+function about(){
+  #cat https://github.com/buerodigital/nas/edit/main/install/_template.sh
+    echo "About"
+}
+
+function install(){
+    echo "Install"
+}
+
+function start(){
+    echo "Start"
+}
+
+function stop(){
+    echo "Stop"
+}
+
+function remove(){
+    echo "Remove"
+}
+
 function help(){
   echo "Die Funktion bitte mit einem der folgenden Parameter aufrufen:"
   echo -e " -a --about\t\t Gibt Informationen über die Anwendung aus"     
@@ -8,27 +29,6 @@ function help(){
   echo -e " -h --stop --halt\t\t Beendet die Anwendung"   
   echo -e " -r --remove --delete\t\t Deinstalliert die Anwendung (Volumes bleiben erhalten!)"   
 }
-
-function about(){
-    echo "Hilfe"
-}
-
-function install(){
-    echo "Hilfe"
-}
-
-function start(){
-    echo "Hilfe"
-}
-
-function stop(){
-    echo "Hilfe"
-}
-
-function remove(){
-    echo "Hilfe"
-}
-
 
 case $1 in
   "-i" | "--install" )
